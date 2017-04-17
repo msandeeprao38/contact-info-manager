@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success" (click)="toNewContact()">New Contact</button>
+    <!--<app-edit-contact 
+      *ngIf="inNewContact"
+      (contactAdded)=hideForm();>
+    </app-edit-contact>-->
+    <app-edit-contact></app-edit-contact>
+    <hr>
+    <ul class="list-group">
+      <a 
+        class="list-group-item" 
+        style="cursor: pointer"
+        *ngFor="let contact of contacts; let i = index"
+        (click)="onEditcontact(i)"> 
+        {{contact.firstName}} {{contact.lastName}}
+        - {{contact.status}}
+      </a>
+    </ul>
+  </div>
+</div>
+
