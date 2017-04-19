@@ -11,13 +11,13 @@ import { Contact } from '../contact.model';
   styleUrls: ['./edit-contact.component.css']
 })
 export class EditContactComponent implements OnInit, OnDestroy {
+  public mask = ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
   subscription: Subscription;
   editmode = false;
   editedItemIndex: number;
   editedItem: Contact;
 
   @ViewChild('contactForm') cForm: NgForm;
-  @Output() contactAdded = new EventEmitter<any>();
 
   constructor(private contactsService: ContactsService) { }
 
@@ -51,7 +51,6 @@ export class EditContactComponent implements OnInit, OnDestroy {
     }
     this.cForm.reset();
     this.editmode = false;
-    // this.contactAdded.emit();
   }
 
   onClear() {

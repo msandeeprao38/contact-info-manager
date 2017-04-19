@@ -42,6 +42,7 @@
             id="phone" 
             class="form-control" 
             name="phone"
+            [textMask]="{mask: mask}"
             ngModel
             required>
         </div>
@@ -55,8 +56,8 @@
               name="status"
               ngModel
               required>
-              <option value="Online">Online</option>
-              <option value="Offline">Offline</option>
+              <option value="Active">Active</option>
+              <option value="Inactive">Inactive</option>
             </select>
         </div>
       </div>

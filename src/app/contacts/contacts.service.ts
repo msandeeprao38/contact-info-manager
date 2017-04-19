@@ -5,10 +5,7 @@ import { Contact } from './contact.model';
 export class ContactsService {
     contactsChanged = new Subject<Contact[]>();
     startedEditing = new Subject<number>();
-      private contacts: Contact[] = [
-      new Contact('Sandeep', 'Rao', 'sandeep_4490@yahoo.com', 5625527290, 'Online'),
-      new Contact('Sandeep', 'Rao', 'sandeep_4490@yahoo.com', 5625527290, 'Offline')
-  ];
+      private contacts: Contact[] = [];
 
   getContacts() {
       return this.contacts.slice();
